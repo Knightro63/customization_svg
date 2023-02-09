@@ -1,39 +1,48 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# customization_svg
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
-
-## Features
-
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+A Flutter plugin to show svgs created by three_dart. This also allows for color changing of the image.
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+To get started with customization_svg add the package to your pubspec.yaml file.
 
-## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
-
+### Generate an SVG from network
+Generate an svg mesh form a network url pointing to the svg. Give the size of the space the svg will be in and the list of colors you want the svg to be leave null to use the colors in the svg.
 ```dart
-const like = 'sample';
+SizedBox(
+  width: 240,
+  child: SVGImage.fromNetwork(
+    Size(240,120), 
+    'svg_url', 
+    [Colors.white,Colors.black]
+  )
+),
 ```
 
-## Additional information
+### Generate an SVG from string
+Generate an svg mesh from a string created locally using three_dart or from a path svg. Give the size of the space the svg will be in and the list of colors you want the svg to be leave null to use the colors in the svg.
+```dart
+SizedBox(
+  width: 240,
+  child: SVGImage.fromString(
+    Size(240,120), 
+    'String from path or created by three_dart'
+  )
+),
+```
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+### Generate an SVG from mesh
+Generate an svg mesh from a string or url them place into a List, local or global variable to change the colors later.
+```dart
+SizedBox(
+  width: 240,
+  child: SVGImage.fromString(
+    mesh,
+    Size(240,120)
+  )
+),
+```
+
+## Contributing
+
+Feel free to propose changes by creating a pull request.
