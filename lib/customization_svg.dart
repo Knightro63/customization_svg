@@ -187,8 +187,8 @@ class SVGImage{
       future: _calculation,
       builder: (BuildContext context, AsyncSnapshot<String> snapshot) {
         return mesh == null?Container(
-          width: double.infinity,
-          height: double.infinity,
+          width: size.width,
+          height: size.height,
           color: Colors.transparent,
           alignment: Alignment.center,
           child: const CircularProgressIndicator()
@@ -210,8 +210,8 @@ class SVGImage{
       future: _calculation,
       builder: (BuildContext context, AsyncSnapshot<String> snapshot) {
         return mesh == null?Container(
-          width: double.infinity,
-          height: double.infinity,
+          width: size.width,
+          height: size.height,
           color: Colors.transparent,
           alignment: Alignment.center,
           child: const CircularProgressIndicator()
