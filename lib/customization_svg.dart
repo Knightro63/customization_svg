@@ -124,7 +124,7 @@ class SVGMesh{
               }
               else if(fillColor.contains('rgb')){
                 List<String> colorInt = fillColor.replaceAll('rgb(', '').replaceAll(')', '').split(',');
-                //print(name);
+                
                 mesh.colors[name] = Color.fromARGB(255, int.parse(colorInt[0]), int.parse(colorInt[1]), int.parse(colorInt[2]));
               }
               else{
@@ -137,7 +137,7 @@ class SVGMesh{
           }
         }
       }
-      else if(info[i].contains('path') && !info[i].contains('/path')){
+      else if(info[i].contains('path') && !info[i].contains('/path') && !info[i].contains('path d=""')){
         List<String> pathData = info[i].replaceAll('path d="M', '').split('" class="');
         List<String> colors = pathData[1].replaceAll('">', '').split(' ');
         String color = colors[0];
